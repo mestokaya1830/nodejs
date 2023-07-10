@@ -1,0 +1,41 @@
+{
+  "name": "exircise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apicache": "^1.6.3",
+    "async": "^3.2.4",
+    "cli-progress": "^3.12.0",
+    "cors": "^2.8.5",
+    "crawler": "^1.4.0",
+    "dotenv": "^16.1.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "express-session": "^1.17.3",
+    "helmet": "^7.0.0",
+    "http-proxy-middleware": "^2.0.6",
+    "jsdom": "^22.1.0",
+    "memorystore": "^1.6.7",
+    "mongoose": "^7.2.2",
+    "needle": "^3.2.0",
+    "object-hash": "^3.0.0",
+    "pug": "^3.0.2",
+    "puppeteer": "^20.5.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "socket-io": "^1.0.0",
+    "socket.io": "^4.6.2",
+    "stream": "^0.0.2",
+    "stripe": "^12.9.0",
+    "youtube-dl": "^3.5.0",
+    "ytdl-core": "^4.11.4"
+  }
+}

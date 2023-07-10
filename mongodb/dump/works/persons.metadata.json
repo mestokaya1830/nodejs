@@ -1,0 +1,19 @@
+{
+  "indexes": [
+    {
+      "v": {
+        "$numberInt": "2"
+      },
+      "key": {
+        "_id": {
+          "$numberInt": "1"
+        }
+      },
+      "name": "_id_",
+      "ns": "works.persons"
+    }
+  ],
+  "uuid": "04c76ff59a704258b13483abaca3dd9b",
+  "collectionName": "persons",
+  "type": "collection"
+}

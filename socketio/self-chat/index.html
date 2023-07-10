@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="msgform">
+    <input type="text" id="msg">
+    <input type="submit" value="Send" id="sendMsg">
+  </form>
+  <ul style="display:flex; flex-direction: column;" id="msg-con"></ul>
+<!--script side-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+<script>
+  const socket = io.connect('http://localhost:3000',{ //to test error change port number
+    reconnectionAttempts: 3, // try 3 times to connect
+    reconnectionDelay: 3000, // try one times to connect every 3 seconds
+    //reconnection: false // never try to reconnect
+  })
+  
+  document.getElementById('msgform').addEventListener('submit', (e) => {
+    e.preventDefault()
+    let msg = document.getElementById('msg').value
+    socket.emit('clientmsg', msg)
+  })
+  socket.on('servermsg', (data) => {
+    document.getElementById('msg-con').innerHTML += `<li>${data}</li>`
+  })
+</script>
+</body>
+</html>

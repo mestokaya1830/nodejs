@@ -1,0 +1,17 @@
+extends layout
+block content
+  div.container
+    table
+      thead
+        tr.table-header
+          th ID
+          th Name
+          th Date
+      body
+        if persons
+          each item in persons
+            tr.table-list
+              td.table-list-item #{item.index}
+              td.table-list-item #{item.name}
+              td.table-list-item #{item.gender}
+              td.table-list-item #{item.company.location.country}
