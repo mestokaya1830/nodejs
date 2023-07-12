@@ -1,4 +1,4 @@
-import mysql from "../db.js";
+import mysql from "../connection/con-mysql.js";
 
 //The SELECT DISTINCT command returns only distinct (different) values in the result set.
 try {

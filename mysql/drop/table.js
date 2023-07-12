@@ -1,4 +1,4 @@
-import mysql from'../db.js'
+import mysql from "../connection/con-mysql.js";
 
 try {
   const conn = await mysql.getConnection()

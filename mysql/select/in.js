@@ -1,4 +1,4 @@
-import mysql from "../db.js";
+import mysql from "../connection/con-mysql.js";
 
 //The IN command allows you to specify multiple values in a WHERE clause.
 try {
