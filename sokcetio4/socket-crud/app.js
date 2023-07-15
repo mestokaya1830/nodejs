@@ -36,10 +36,15 @@ io.on('connection', (socket) => {
   socket.on('add-user', async(user) => {
     const newUser = new Users(user)
     await newUser.save()
-
     //get user here or on frontend with emit getsuers
     // const result = await Users.find()
     // io.emit('send-users', result)
+  })
+  socket.on('update-password', async(data) => {
+    await Users.updateOne({_id:data.id}, {$set:{password:data.password}})
+  })
+  socket.on('delete-user', async(id) => {
+    await Users.deleteOne({_id:id})
   })
 
   socket.on('disconnect', () => {
