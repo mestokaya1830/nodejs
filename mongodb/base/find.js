@@ -2,7 +2,7 @@ import express from 'express'
 const app = express()
 import cors from 'cors'
 import db from '../db.js'
-import Users from '../usersSchema.js'
+import Users from './usersSchema.js'
 
 app.use(cors())
 app.use(express.json())

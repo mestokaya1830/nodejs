@@ -3,6 +3,9 @@ import cors from 'cors'
 const app = express()
 import path from 'path'
 
+import db  from './static/db.js'
+import Users from './static/UsersSchema.js'
+
 import http from 'http'
 import { Server } from "socket.io"
 const server = http.createServer(app)
@@ -14,23 +17,29 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static('static'))
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html')
+  res.json()
 })
 
 app.get('/users', (req, res) => {
-  res.sendFile(path.resolve('users.html'))
+  res.sendFile(path.resolve('static/users.html'))
 })
 
 io.on('connection', (socket) => {
+  
   console.log('a user connected')
+  
+  socket.on('get-users', async() => {
+    const result = await Users.find()
+    io.emit('send-users', result)
+  })
 
-  socket.on('get-users', () => {
-    const users = {
-      name:'Mesto',
-      lastname:'Kaya',
-      age:50
-    }
-    io.emit('set-users', users)
+  socket.on('add-user', async(user) => {
+    const newUser = new Users(user)
+    await newUser.save()
+
+    //get user here or on frontend with emit getsuers
+    // const result = await Users.find()
+    // io.emit('send-users', result)
   })
 
   socket.on('disconnect', () => {
