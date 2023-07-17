@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
     "jsdom": "^22.1.0",
     "memorystore": "^1.6.7",
     "mongoose": "^7.2.2",
+    "mysql": "^2.18.1",
     "needle": "^3.2.0",
     "object-hash": "^3.0.0",
     "pug": "^3.0.2",
