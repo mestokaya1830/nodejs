@@ -16,12 +16,6 @@ app.get('/:id', (req, res) => {
   res.send(req.params.id)
 })
 
-app.get('/test', (req, res) => {
-  // if(req.query.lang === 'mesto'){
-  //   console.log(req.query)
-  // }
-  res.send(req.query.lang)
-})
 
 app.listen(3000, () => {
   console.log('Server is running...')

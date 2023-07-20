@@ -1,6 +1,6 @@
-const express = require('express')
-const cors = require('cors')
-const helmet = require('helmet')
+import express from 'express'
+import cors from 'cors'
+import helmet from 'helmet'
 const app = express()
 
 
@@ -13,10 +13,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/test', (req, res) => {
-  if(req.query.lang === 'mesto'){
-    console.log(req.query)
+  if(req.query.lang == 'mesto'){
+    res.send(req.query)
+  } else {
+    res.send('error')
   }
-  res.send(req.query)
 })
 
 app.listen(3000, () => {

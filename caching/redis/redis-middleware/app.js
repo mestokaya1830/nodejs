@@ -4,7 +4,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import dotenv from 'dotenv'
 import cache from './middleware/cache.js'
-const wrapAsync = require('../middleware/wrapasync.js')
+import wrapAsync from './middleware/wrapasync.js'
 
 dotenv.config()
 app.use(helmet())
