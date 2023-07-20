@@ -13,7 +13,6 @@ app.get('/' , (req , res)=>{
 
 io.on('connection', (socket) => {
   console.log('a user connected')
-
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
   })
@@ -27,6 +26,7 @@ app.use((error, req, res, next) => {
   console.log(error)
   next()
 })
+
 app.listen(3000, () => {
   console.log('Server is running...')
 })
