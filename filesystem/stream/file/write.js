@@ -1,12 +1,12 @@
-const fs = require('fs')
+import fs from 'fs'
 
 const main = async () => {
-  const rs = fs.createReadStream('./soccer.json')
+  const rs = fs.createReadStream('./soccer.json',{highWaterMark: 1})
   const ws = fs.createWriteStream('./createdstream.json')
 
   
-  rs.on("data", (buffer) => {
-    console.log(buffer.toString())
+  rs.on("data", (chunk) => {
+    console.log(chunk.toString())
   })
   
   rs.on('end', () => {

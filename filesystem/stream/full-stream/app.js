@@ -25,8 +25,8 @@ app.get('/playvideo', (req, res) => {
   const chunk_size = 5*10**5 //500 kb
   const start = Number(range.replace(/\D/g, ""))
   const end = Math.min(start + chunk_size, size-1)
-  console.log(size)
   const content_length = end - start + 1
+  console.log(content_length)
 
   const headers = {
     "Content-Range":`bytes ${start}-${end}/${size}`,
@@ -42,7 +42,7 @@ app.get('/playvideo', (req, res) => {
 
 app.use((err, req, res, next) => {
   console.log(err)
-  // next()
+  next()
 })
 app.listen(process.env.PORT, () => {
   console.log('Server is running...')
