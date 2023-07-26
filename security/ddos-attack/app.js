@@ -1,29 +1,31 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const limiter = require('express-rate-limit')
+import limiter from 'express-rate-limit'
 
 //global limit
 // app.use(
 //   limiter({
 //     windowMs: 5000,//miliseconds
 //     max: 5, // limit
-//     message:'Stop'
+//     message:'Stop',
+//     standardHeaders: true,
+//     legacyHeaders: false
 //   })
 // )
 
 //router limit
 const homeLimit = limiter({
-  windowMs: 5000,//miliseconds
+  windowMs: 60*1000,//1 minute
   max: 6, // limit
   message:'Stop'
 })
 const userLimit = limiter({
-  windowMs: 5000,//miliseconds
+  windowMs: 60*1000,//1 minute
   max: 4, // limit
   message:'Stop'
 })
 const adminLimit = limiter({
-  windowMs: 5000,//miliseconds
+  windowMs: 60*1000,//1 minute
   max: 2, // limit
   message:'Stop'
 })
