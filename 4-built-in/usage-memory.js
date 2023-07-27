@@ -11,4 +11,4 @@ setInterval(() => {
     };
 
     console.log(memoryUsage)
-  }, 10000)
+  }, 5000)
