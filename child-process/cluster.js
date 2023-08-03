@@ -1,20 +1,31 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const os = require('os')
-const cluster = require('cluster')
+import os from 'os'
+import cluster from 'cluster'
 
 const numCpu = os.cpus().length
 
+function delay(duration){
+  const startTime = Date.now()
+  while(Date.now() - startTime < duration){
+    ''
+  }
+}
+
+//this route dosnt wait timer route
 app.get('/', (req, res) => {
   res.send('Process id'  + process.pid)
   cluster.worker.kill()
 })
-app.get('/test', (req, res) => {
+
+//open this route in multipple tab and check response time
+app.get('/timer', (req, res) => {
+  delay(9000)
   res.send('Other process id'  + process.pid)
   cluster.worker.kill()
 })
 
-if(cluster.isMaster) {
+if(cluster.isPrimary) {
   for (let i = 0; i < numCpu; i++) {
     cluster.fork()
   }
