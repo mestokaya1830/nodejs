@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 20px auto;
+      width: 300px;
+    }
+
+    .buttons {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 style="margin: 20px; text-align: center;">Javascript Export Functions As Default</h2>
+  <p style="margin: 20px; text-align: center;">Look at the Console</p>
+
+  <script type="module">
+    import myMath from './module.js'
+
+    console.log(myMath)
+    console.log('Sum: ', myMath.sum(4, 5))
+    console.log('Multiple: ', myMath.multiple(4, 5))
+    console.log('divide: ', myMath.divide(40, 5))
+    console.log('subtraction: ', myMath.subtraction(50, 5))
+
+    //get Person object
+    console.log('Summary Object: ', myMath.summary)
+  </script>
+</body>
+
+</html>
