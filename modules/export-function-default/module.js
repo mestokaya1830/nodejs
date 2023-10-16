@@ -18,3 +18,25 @@ export default {
     subtraction:'Minus one number from another',
   }
 };
+
+
+//or
+// const sum = (x, y) => {
+//   return x+y
+// }
+// const multiple = (x, y) => {
+//   return x*y
+// }
+// const divide = (x, y) => {
+//   return x/y
+// }
+// const subtraction = (x, y) => {
+//   return x-y
+// }
+
+// export default {
+//   sum,
+//   multiple,
+//   divide,
+//   subtraction
+// }
