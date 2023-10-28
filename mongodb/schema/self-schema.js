@@ -15,7 +15,7 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('tiny'))
 
-/self schema
+//self schema
 const usersSchema = new mongoose.Schema({} , {strict: false})
 const Users = new mongoose.model('Users', usersSchema)
 

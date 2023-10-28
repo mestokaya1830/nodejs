@@ -1,8 +1,8 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const cors = require('cors')
-const db = require('../db')
-const Users = require('../usersSchema.js')
+import cors from 'cors'
+import db from '../db.js'
+import Users from '../schema/usersSchema.js'
 
 app.use(cors())
 app.use(express.json())
@@ -10,12 +10,12 @@ app.use(express.urlencoded({extended: true}))
 
 app.get('/', async(req, res) => {
   const newUser = new Users({
-    name:"Ali",
+    name:"Mesto",
     password:"1234",
-    salery:4000,
+    age:30,
+    salary:5000,
     language:['Python','Javascript'],
     messages:[{userName:"Ali",text:'Hello'}],
-    scores:[40,50,60],
     children:[
       {name:'Ali',age:12,gender:"male"},
       {name:'Banu',age:2,gender:'female'}
