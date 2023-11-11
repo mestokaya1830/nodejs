@@ -14,8 +14,11 @@ app.use(express.urlencoded({extended: true}))
 app.use(session({
   secret: 'admin',
   resave: true,
-  saveUninitialized: true,
-  cookie: { maxAge: 24 * 60 * 60 * 1000 },
+  saveUninitialized: false,//delete cookie on browser when expired
+  cookie: { maxAge: 1 * 60000},//1 minute
+  //cookie: { maxAge: 1 * 3600000},//1 hour
+  // cookie: { maxAge: 24 * 3600000},//1 day
+  rolling: true,//refresh cookie-time when user reactivate with server
   httpOnly: true,//only transmit cookie over https
   secure: true,//prevents client side js reading the cookies
   store: new MemoryStore({

@@ -1,22 +1,21 @@
-const { spawn } = require('child_process')
-const cron = require('node-cron')
+import cron from 'node-cron'
+import { spawn } from 'child_process'
+cron.schedule('*/1 * * * *', () => {
+  const d = new Date()
+  let backupProcess = spawn('mongodump', [
+    '--db=bet', 
+    `--out=./${d.toDateString()}`,
+    '--authenticationDatabase=admin',
+    '--username=Boss',
+    '--password=9090',
+    ]);
 
-cron.schedule('*/5 * * * * *', () => backupMongo())
-
-function backupMongo() {
-  //backup
-  const child = spawn('mongodump', [
-    '--db=' + 'works',
-    '--host=' + 'localhost'
-  ])
-  //show result info
-  child.on('exit', (code, signal) => {
-    if (code)
-      console.log('Backup process exited with code ', code);
-    else if (signal)
-      console.error('Backup process was killed with singal ', signal);
-    else
-      console.log('Successfully backedup the database')
-  })
-}
-backupMongo()
+  backupProcess.on('exit', (code, signal) => {
+      if(code) 
+          console.log('Backup process exited with code ', code);
+      else if (signal)
+          console.error('Backup process was killed with singal ', signal);
+      else 
+          console.log('Successfully backedup the database')
+  });
+});
