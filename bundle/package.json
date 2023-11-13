@@ -2,10 +2,10 @@
   "name": "bundle",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "esbuild app.js --bundle --platform=node --outfile=server-app.js",
+    "build": "esbuild index.js --bundle --platform=node --outfile=server-index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

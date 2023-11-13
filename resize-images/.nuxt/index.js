@@ -7,7 +7,7 @@ import { createRouter } from './router.js'
 import NuxtChild from './components/nuxt-child.js'
 import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.js'
-import App from './App.js'
+import App from './index.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
@@ -35,7 +35,7 @@ Vue.component(NoSsr.name, {
 Vue.component(NuxtChild.name, NuxtChild)
 Vue.component('NChild', NuxtChild)
 
-// Component NuxtLink is imported in server.js or client.js
+// Component NuxtLink is imported in index.js or client.js
 
 // Component: <Nuxt>
 Vue.component(Nuxt.name, Nuxt)
@@ -99,7 +99,7 @@ async function createApp(ssrContext, config = {}) {
         }
         nuxt.dateErr = Date.now()
         nuxt.err = err
-        // Used in src/server.js
+        // Used in src/index.js
         if (ssrContext) {
           ssrContext.nuxt.error = err
         }
