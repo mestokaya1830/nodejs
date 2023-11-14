@@ -1,15 +1,13 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const path = require('path')
+import path from 'path'
 
 router.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../index.html'));
+  res.sendFile(path.resolve('views/index.html'))
 })
-router.get('/login', function (req, res) {
-  res.sendFile(path.join(__dirname, '../login.html'));
-})
+
 router.get('/account', function (req, res) {
-  res.sendFile(path.join(__dirname, '../account.html'));
+  res.sendFile(path.resolve('views/pages/account.html'))
 })
 
 module.exports = router

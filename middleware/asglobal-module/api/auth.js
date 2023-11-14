@@ -6,4 +6,4 @@ const isLogin = (req, res, next) => {
     res.send('Please login!')
   }
 }
-module.exports = isLogin
+export default isLogin
