@@ -10,4 +10,4 @@ router.get('/account', function (req, res) {
   res.sendFile(path.resolve('views/pages/account.html'))
 })
 
-module.exports = router
+export default router
