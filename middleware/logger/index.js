@@ -29,6 +29,6 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.resolve('views/pages/contact.html'))
 })
 
-app.listen(5000, () => {
+app.listen(3000, () => {
   console.log('Server is running...')
 })

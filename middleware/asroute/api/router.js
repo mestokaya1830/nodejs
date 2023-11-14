@@ -1,16 +1,14 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const path = require('path')
-const auth = require('./auth')
+import path from 'path'
+import auth from './auth.js'
 
-router.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../index.html'))
-})
-router.get('/login', function (req, res) {
-  res.sendFile(path.join(__dirname, '../login.html'))
-})
-router.get('/account', auth, function (req, res, next) {
-  res.sendFile(path.join(__dirname, '../account.html'))
+router.get('/', (req, res) => {
+  res.sendFile(path.resolve('views/index.html'))
 })
 
-module.exports = router
+router.get('/account', auth, (req, res) => {
+  res.sendFile(path.resolve('views/pages/account.html'))
+})
+
+export default router

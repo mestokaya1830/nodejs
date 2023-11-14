@@ -1,7 +1,7 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const cors = require('cors')
-const router = require('./api/router')
+import cors from 'cors'
+import router from './api/router.js'
 
 app.use(cors())
 app.use(express.json())
@@ -9,4 +9,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 app.use('/', router)
-app.listen(process.env.PORT || 3000)
+
+app.listen(3000, () => {
+  console.log('Server is running...')
+})
