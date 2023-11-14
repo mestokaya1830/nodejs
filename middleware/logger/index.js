@@ -19,17 +19,16 @@ app.use((req, res, next) => {
   console.log(log)
   next()
 })
-app.get('/', function (req, res) {
-  res.sendFile(path.resolve('./views/index.html'))
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve('views/index.html'))
 })
-app.get('/about', function (req, res) {
-  res.sendFile(path.resolve(path.dirname('views/about.html')))
-  // res.sendFile(path.resolve('./views/about.html'))
+app.get('/about', (req, res) => {
+  res.sendFile(path.resolve('views/pages/about.html'))
 })
-app.get('/contact', function (req, res) {
-  res.sendFile(path.resolve('./views/contact.html'))
+app.get('/contact', (req, res) => {
+  res.sendFile(path.resolve('views/pages/contact.html'))
 })
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(5000, () => {
   console.log('Server is running...')
 })
