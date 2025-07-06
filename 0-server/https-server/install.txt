@@ -1,0 +1,8 @@
+openssl //check openssl installed or not 
+mkdir cert
+cd cert
+1 - openssl genrsa -out key.pem
+2 - openssl req -new -key key.pem  -out csr.pem
+3 - openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out cert.pem
+
+https://localhost:3443

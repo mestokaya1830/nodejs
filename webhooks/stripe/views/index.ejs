@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="payment" method="POST">
+      <h2>CHECKOUT</h2>
+      <div class="form-container">
+        <input type="text" name="username" placeholder="Name">
+        <input type="text" name="postal_code" placeholder="PostaCode">
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="state" placeholder="State">
+        <input type="text" name="country" placeholder="Country">
+        <input type="text" name="address" placeholder="Address">
+      </div>
+      <script
+        class="stripe-button"
+        src="//checkout.stripe.com/v2/checkout.js"
+        data-key="<%= key %>"
+        data-amount="3000"
+        data-currency="usd"
+        data-name="Gautam Sharma"
+        data-description="Buy React.js Complete Course"
+        data-locale="auto"
+      ></script>
+    </form>
+  </body>
+</html>

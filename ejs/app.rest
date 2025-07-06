@@ -1,0 +1,23 @@
+###
+GET http://localhost:3000/
+
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "name" : "mesto",
+  "password": "9090"
+}
+
+###
+PATCH http://localhost:3000/edit/663556e0f20ed3de33ed8da1
+Content-Type: application/json
+
+{
+  "password": "123"
+}
+
+###
+DELETE http://localhost:3000/delete/663556e0f20ed3de33ed8da1
+

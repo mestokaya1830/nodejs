@@ -1,0 +1,29 @@
+//orders----------------------------------
+
+###
+GET http://localhost:3000/orders
+
+###
+POST http://localhost:3000/orders
+Content-Type:  application/json
+
+{
+  "productId":"661e88cdd4d96b1fa04697f8",
+  "quantity": 5
+}
+
+###
+GET http://localhost:3000/orders/661e898cfea23e5a20fe331b
+Content-Type: application/json
+
+
+###
+PATCH http://localhost:3000/orders/661fff635f8f7719d984d5aa
+Content-Type: application/json
+
+{
+  "quantity":2
+}
+
+###
+Delete http://localhost:3000/orders/661ffef1aac1e80cd8daf48a

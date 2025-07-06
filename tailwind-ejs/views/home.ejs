@@ -1,0 +1,28 @@
+<h1 class="text-3xl font-bold underline"><%= title %></h1>
+
+<% if (users) { %>
+  <ul>
+    <li class="title">
+      <span>Image</span>
+      <span>ID</span>
+      <span>NAME</span>
+      <span>PASSWORD</span>
+      <span>EDIT</span>
+      <span>DELETE</span>
+    </li>
+  </ul>
+  <ul>
+    <% users.forEach(function(item){ %>
+      <li>
+        <span><img src="/uploads/<%= item.image %>" alt="" class="user-image"></span>
+        <span><%= item.id %></span>
+        <span><%= item.name %></span>
+        <span><%= item.password %></span>
+        <a href= "/edit/<%= item.id %>">Edit</a>
+        <form action="/delete/<%= item.id %>" method="post">
+          <input type="submit" value="Delete" class="delete-btn">
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>

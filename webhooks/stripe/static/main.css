@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 20px;
+  background-color: #000;
+}
+.navbar a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+  margin: 0 15px;
+}
+.router{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+.form div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 400px;
+}
+h2{
+  width: 100%;
+  text-align: center;
+}
+form div input{
+  width: 100%;
+  height: 34px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0 5px;
+  margin: 5px 0;
+}

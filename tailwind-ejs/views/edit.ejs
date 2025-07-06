@@ -1,0 +1,25 @@
+<h1><%= title %></h1>
+
+<ul>
+  <li class="title">
+    <span>ID</span>
+    <span>NAME</span>
+    <span>PASSWORD</span>
+  </li>
+</ul>
+<% if (user) { %>
+  <ul>
+    <li>
+      <span><img src="/uploads/<%= user.image %>" alt="" class="user-image"></span>
+      <span><%= user.id %></span>
+      <span><%= user.name %></span>
+      <form action="/edit/<%= user.id %>" method="post">
+        <input type="text" name="password" id="password" value="<%= user.password %>">
+        <input type="submit" value="Update" class="update">
+      </form>
+    </li>
+    <li>
+      
+    </li>
+  </ul>
+<% } %>

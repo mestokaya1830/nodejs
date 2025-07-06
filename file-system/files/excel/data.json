@@ -1,0 +1,62 @@
+[
+  {
+    "First Name": "John",
+    "Last Name": "Bailey",
+    "Purchase Price": 1000,
+    "Payments Made": 100
+  },
+  {
+    "First Name": "Leonard",
+    "Last Name": "Clark",
+    "Purchase Price": 1000,
+    "Payments Made": 150
+  },
+  {
+    "First Name": "Phil",
+    "Last Name": "Knox",
+    "Purchase Price": 1000,
+    "Payments Made": 200
+  },
+  {
+    "First Name": "Sonia",
+    "Last Name": "Glover",
+    "Purchase Price": 1000,
+    "Payments Made": 250
+  },
+  {
+    "First Name": "Adam",
+    "Last Name": "Mackay",
+    "Purchase Price": 1000,
+    "Payments Made": 350
+  },
+  {
+    "First Name": "Lisa",
+    "Last Name": "Ogden",
+    "Purchase Price": 1000,
+    "Payments Made": 400
+  },
+  {
+    "First Name": "Elizabeth",
+    "Last Name": "Murray",
+    "Purchase Price": 1000,
+    "Payments Made": 500
+  },
+  {
+    "First Name": "Caroline",
+    "Last Name": "Jackson",
+    "Purchase Price": 1000,
+    "Payments Made": 350
+  },
+  {
+    "First Name": "Kylie",
+    "Last Name": "James",
+    "Purchase Price": 1000,
+    "Payments Made": 900
+  },
+  {
+    "First Name": "Harry",
+    "Last Name": "Peake",
+    "Purchase Price": 1000,
+    "Payments Made": 1000
+  }
+]

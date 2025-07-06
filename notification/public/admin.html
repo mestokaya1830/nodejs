@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Admin Page</h2>
+  <input type="button" name="" id="send" value="Send Notification To Clients">
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io()
+    document.getElementById('send').onclick = () => {
+      const notify = {
+          title:'mesto',
+          body:'Hello',
+          icon:'https://www.flaticon.com/free-sticker/penguins_6394192?related_id=6394192'
+        }
+      socket.emit('client-side', notify)
+    }
+  </script>
+</body>
+</html>

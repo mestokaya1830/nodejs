@@ -1,0 +1,17 @@
+sudo apt-get purge elixir
+sudo apt-get purge erlang
+
+sudo apt-get remove --auto-remove rabbitmq-server
+sudo apt-get purge --auto-remove rabbitmq-server
+
+sudo apt-get install erlang
+sudo apt install rabbitmq-server
+
+
+admin panel
+sudo cp /var/lib/rabbitmq/.erlang.cookie $HOME
+sudo chmod +r ./.erlang.cookie
+close terminal open new terminal
+sudo rabbitmq-plugins enable rabbitmq_management
+
+http://localhost:15672

@@ -1,0 +1,4 @@
+
+👉️ SERVE DIST FOLDER WITHOUT NODEJS OR NGINX OR APACHE
+npm install -g serve
+serve -s dist

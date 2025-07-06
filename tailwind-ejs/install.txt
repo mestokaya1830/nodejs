@@ -1,0 +1,27 @@
+npm install tailwindcss postcss autoprefixer postcss-cli
+npx tailwindcss init -p
+
+Copy the following code to your tailwind.config.js file
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+content: ['./views/*.ejs'],
+theme: {
+extend: {},
+},
+plugins: [
+{
+tailwindcss: {},
+autoprefixer: {},
+},
+],
+};
+
+Create a tailwind.css file in the public/stylesheets folder and add the following to the file:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Add the following script to the package.json file.
+
+"devcss": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css"

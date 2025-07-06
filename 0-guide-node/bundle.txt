@@ -1,0 +1,10 @@
+npm i -g pkg
+open terminal and pkg filename.js
+not = node_modules must be in root folder
+
+all
+//npm i -g pkg
+//pkg app.js for all executable
+//pkg app.js --target node18-linux-x64
+//pkg app.js --target node18-macos-x64
+//pkg app.js --target node18-win-x64

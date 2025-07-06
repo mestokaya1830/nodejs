@@ -1,0 +1,10 @@
+app.get('/api/stream', async (req, res, next) => {
+  let rs = fs.createReadStream('./persons.json', {highWaterMark: 10}, 'utf-8')//small chunk or buffer speed 
+  rs.on('open', () => {
+    res.attachment('person.json')
+    rs.pipe(res)
+  })
+  rs.on('error', (err) => {
+    next(err)
+  })
+})

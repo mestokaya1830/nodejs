@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Home Page</h1>
+  <button onclick="getAjax()">Get Users With Ajax</button>
+  <button onclick="getFetch()">Get Users With Fetch</button>
+  <button onclick="getAxios()">Get Users With Axios</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const getAjax = () => {
+      const xhttp = new XMLHttpRequest()
+      xhttp.open('GET', 'http://localhost:3000/users', true)
+      xhttp.send()
+      xhttp.onload = function () {
+        if (this.status === 200) {
+          console.log(JSON.parse(this.responseText))
+        }
+      }
+    }
+
+    const getFetch = async () => {
+      const result = await fetch('http://localhost:3000/users')
+      console.log(await result.json())
+    }
+
+    const getAxios = async () => {
+      await axios.get('http://localhost:3000/users').then(result => {
+        console.log(result.data)
+      })
+    }
+  </script>
+</body>
+</html>

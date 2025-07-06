@@ -1,0 +1,14 @@
+<h1><%= title  %></h1>
+
+<% if (user != '') { %>
+  <h2><%= user %> registered successfully</h2>
+<% } %>
+
+ 
+ 
+<form action="/register" method="post" class="register-form" enctype="multipart/form-data">
+  <input type="text" name="user" id="user" placeholder="Username...">
+  <input type="password" name="password" id="password" placeholder="Password...">
+  <input type="file" name="file" id="file">
+  <input type="submit" value="Register" class="register-btn">
+</form>

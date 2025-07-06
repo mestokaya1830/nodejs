@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const myJSON = '{"name":"John", "age":30, "car":null}';
+      const myObj = JSON.parse(myJSON);
+
+      //get key
+      let text = "";
+      for (const x in myObj) {
+        text += x + ", ";
+      }
+      console.log(text)
+      //get value
+      let text2 = "";
+      for (const x in myObj) {
+        text2 += myObj[x] + ", ";
+      }
+      console.log(text2)
+    </script>
+  </body>
+</html>

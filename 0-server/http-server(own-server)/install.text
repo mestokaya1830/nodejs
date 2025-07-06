@@ -1,0 +1,7 @@
+npm i http-server -g
+create your project
+and run in project  = http-server .
+
+this is your server without apache and nginx
+
+open browser type localhost:8080 or mesto@mesto-HP-ZBook-17-G3:8080

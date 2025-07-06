@@ -1,0 +1,30 @@
+//install nvm version
+sudo apt install curl 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+source ~/.bashrc
+nvm list-remote
+nvm i v20.18.0 or version_name
+
+//use node nvm version
+nvm list
+nvm current
+nvm use v20.18.0 
+nvm deactivate
+nvm uninstall v20.18.0 
+
+or----------------------
+//remove node
+sudo apt-get remove nodejs
+sudo apt-get purge nodejs
+sudo apt-get autoremove
+
+npm------------------------------------------------------------
+//close all node proccess
+sudo pkill node
+
+//close specific proccess
+sudo netstat -ntlp
+sudo lsof -i :3000
+sudo kill -9 pid
+
+sudo npm cache clean --force
