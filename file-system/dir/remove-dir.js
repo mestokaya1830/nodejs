@@ -1,9 +1,16 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path';
+import {dirname} from 'path'
+import { fileURLToPath } from 'url';
 
-const removeDir = (pathname) => {
-    fs.rmdirSync(path.resolve(pathname), { recursive: true }, (err) => {
-        if(!err) if(!err)console.log(`${dir} is removed!`);
-    })
+const __dirname = dirname(fileURLToPath(import.meta.url));
+async function removeDir(pathname) {
+    try {
+        await fs.promises.rm(path.resolve(__dirname, pathname), { recursive: true, force: true });
+        console.log(`${pathname} deleted!`);
+    } catch (err) {
+        console.error('Not deleted:', err.message);
+    }
 }
-removeDir('./folder1')
+
+removeDir('./folder-1');

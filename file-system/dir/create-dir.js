@@ -1,10 +1,16 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path';
+import {dirname} from 'path'
+import { fileURLToPath } from 'url';
 
-
-const createDir = (pathname) => {
-    fs.mkdir(path.resolve(pathname), { recursive: true }, (err) => {
-        if(!err) console.log('Success');
-    })
+const __dirname = dirname(fileURLToPath(import.meta.url));
+async function createDir(pathname) {
+    try {
+        await fs.promises.mkdir(path.resolve(__dirname, pathname), { recursive: true });
+        console.log('Success');
+    } catch (err) {
+        console.error('Error:', err);
+    }
 }
-createDir('./folder1')
+
+createDir('folder-1')
