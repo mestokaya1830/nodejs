@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send(`
+      <h1>My Express App</h1>
       <form action="/api/user" method="POST">
         <input type="text" name="name" placeholder="Enter some data" />
         <input type="text" name="age" placeholder="Enter user age" />
