@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
      <link rel="stylesheet" href="/main.css" />
     </head>
       <h1>http-server-without-file</h1>
+      <img src="/logo.jpeg" alt="" />
       <form action="/api/user" method="POST">
         <input type="text" name="name" placeholder="Enter some data" />
         <input type="text" name="age" placeholder="Enter user age" />
