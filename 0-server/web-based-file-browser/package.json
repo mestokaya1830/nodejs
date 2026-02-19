@@ -1,0 +1,19 @@
+{
+  "name": "ftp-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-basic-auth": "^1.2.1",
+    "multer": "^2.0.2",
+    "serve-index": "^1.9.2"
+  }
+}
