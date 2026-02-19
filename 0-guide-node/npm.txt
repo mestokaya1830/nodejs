@@ -1,7 +1,0 @@
-npm list -g
-npm list //in project older
-npm update
-npm update -g //update global package
-npm outdated
-npm outdated -g --depth=0 //check global package
-npm install npm@latest -g
