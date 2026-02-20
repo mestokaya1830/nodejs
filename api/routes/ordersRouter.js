@@ -5,6 +5,7 @@ import Orders from '../models/schemas/ordersSC.js'
 
 Router.get('/', tryCatch(async(req, res) => {
   const result = await Orders.find({})
+  
   res.status(200).json({Orders:result})
 }))
 
