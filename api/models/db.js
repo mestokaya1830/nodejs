@@ -1,10 +1,7 @@
-import Mongoose  from "mongoose";
+import Mongoose from "mongoose";
 
-const db = Mongoose.connect(process.env.MONGO_URL)
-.then(() => {
-  console.log('Connected')
-})
-.catch((error) => console.log(error))
+Mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log('MongoDB Connected'))
+  .catch((error) => console.log('MongoDB Connection Error:', error));
 
-
-export default db
+export default Mongoose.connection;
